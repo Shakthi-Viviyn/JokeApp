@@ -8,7 +8,7 @@ To get the server ready, follow these steps:
 ```git clone https://github.com/Shakthi-Viviyn/jokeapp.git```
 
 2. Navigate to the project directory:
-```cd your-react-app```
+```cd jokeapp```
 
 3. Install the required dependencies using npm:
 ```npm install```
