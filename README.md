@@ -29,6 +29,6 @@ To add an API key to your React app, you'll need to set up an `.env.local` file 
 ```npm start```
 
 
-This will start the server and open the app in your default web browser. Now you can view the React app locally.
+This will start the server and open the app in your default web browser. Now you can view the Joke app locally.
 
-Happy coding! :rocket:
+Happy coding! :clown_face:
