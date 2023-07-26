@@ -41,7 +41,7 @@ function App() {
   }
 
   useEffect(() => {
-    const apiKey = 'AIzaSyBabYfcpMebqzQ9LsNP3OQAgr7wUs86IuE';
+    const apiKey = process.env.REACT_APP_API_KEY;
     const url = `https://translation.googleapis.com/language/translate/v2/languages?key=${apiKey}`;
 
     const fetchLanguages = async () => {
@@ -67,9 +67,9 @@ function App() {
 
   useEffect(() => {
     async function translateText(text, targetLanguage) {
-      const apiKey = 'AIzaSyBabYfcpMebqzQ9LsNP3OQAgr7wUs86IuE';
+      const apiKey = process.env.REACT_APP_API_KEY;
       const url = `https://translation.googleapis.com/language/translate/v2?key=${apiKey}`;
-    
+      console.log("translated text")
       const requestBody = {
         q: text,
         target: targetLanguage,
