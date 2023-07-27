@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect, useRef} from 'react';
 import './App.css';
 import { languageData } from './languageData';
 import { ToastContainer, toast } from 'react-toastify';
@@ -20,7 +20,8 @@ function App() {
   const [languagesList, setLanguagesList] = useState([]);
   const [selectedLanguage, setSelectedLanguage] = useState('en');
 
-  
+  const emoji = useRef(null);
+
   //async function fetches joke from API
   const fetchJoke = async () => {
     try {
@@ -140,6 +141,12 @@ function App() {
   //button press event handlers
   function handleNewJoke(){
     fetchJoke();
+    setTimeout(() => {
+      emoji.current.classList.add('enlarge-emoji');
+    },250);
+    setTimeout(() => {
+      emoji.current.classList.remove('enlarge-emoji');
+    },1500);
   }
 
   function updateLanguage(e) {
@@ -163,8 +170,9 @@ function App() {
         </div>
 
         <div className='content-box'>
-          <h1>{jokeData.setup}</h1>
-          <h2>{jokeData.delivery}</h2>
+          <h1 ref={emoji} className='joke-emoji'>🤣</h1>
+          <h1 className='joke-text'>{jokeData.setup}</h1>
+          <h2 className='joke-text'>{jokeData.delivery}</h2>
           <button id="new-joke-btn" onClick={handleNewJoke}>New Joke</button>
         </div>
       </div>
